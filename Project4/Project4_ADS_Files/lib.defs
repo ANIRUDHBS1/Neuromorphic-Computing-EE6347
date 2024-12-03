@@ -1,0 +1,4 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+DEFINE Week4_RRAM_lib Week4_RRAM_lib
+ASSIGN Week4_RRAM_lib libMode shared

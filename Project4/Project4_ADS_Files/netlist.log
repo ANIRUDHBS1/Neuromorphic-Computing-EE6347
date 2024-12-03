@@ -1,0 +1,45 @@
+; Top Design: "Week4_RRAM_lib:RRAM:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="Week4_RRAM_lib:RRAM:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+simulator lang = spectre
+global 0
+ahdl_include "C:/Users/bsani/OneDrive/Desktop/Semester7/EE6347/SoorajSims/Assignment4/Week4_RRAM_lib/%%R%%R%%A%%M/veriloga/veriloga.va"
+
+
+X1 (N__5 N__7 N__3 N__1) RRAM k=1.38e-23 q=1.602e-19 g0=0.2e-9 V0=0.5 I0=0.65e-4 ve0=5e6 Eam=0.9 a=0.3e-10 gamma0=20 b=1 c=1 L=8e-9 gmax=3.3e-9 gmin=5e-10 gini=3.3e-9 r_cf=8e-9 rho=2.8e-3 Rth=3e6 Tamb=300
+simulator lang = ads
+"nmos":MOSFET1  N__7 N__0 0 0 Length=180 nm Width=18000 nm Mode=1 Noise=yes 
+V_Source:SRC1  N__0 0 Type="V_DC" Vdc=0.9 V SaveCurrent=1 
+V_Source:SRC2  Vinp 0 Type="VtPWL" V_Tran=pwl(time, 0us,0V, 49us,0V, 50us,5V, 100us,5V, 101us,0V, 150us,0V, 151us,0.3V, 200us, 0.3V, 201us,0V, 250us,0V, 251us,-4V, 300us,-4V, 301us,0V, 350us,0V, 351us,0.3V, 400us,0.3V, 401us,0V, 450us, 0V) SaveCurrent=1 
+Short:I_Probe1  Vinp N__5 Mode=0 SaveCurrent=yes 
+simulator lang=spice
+.include 'C:/Users/bsani/OneDrive/Desktop/Semester7/EE6347/JulNov24/Assignment4/180nm_spice.pl'
+simulator lang=ads
+Tran:Tran1 StartTime=0.0 nsec StopTime=450.0 usec MaxTimeStep=1.0 nsec LimitStepForTL=yes TimeStepControl=2 TruncTol=7.0 ChargeTol=1.0e-14 IntegMethod=0 MaxGearOrder=2 \
+Mu=0.5 MaxOrder=4 Freq[1]=1.0 GHz Order[1]=3 HB_Window=no \
+HB_Sol=no ImpApprox=no ShortTL_Delay=1.0 psec ImpMode=1 UseInitCond=no \
+LoadGminDC=no CheckKCL=yes CheckOnlyDeltaV=yes OverloadAlert=no DeviceBypass=no \
+MaxIters=10 MaxItersDC=200 DevOpPtLevel=0 StatusLevel=2 OutputAllPoints=yes \
+NoiseScale=1 ImpEnforcePassivity=yes ImpSkipTotalEnergy=1000 ImpLFEOn=yes \
+OutputPlan="Tran1_Output" 
+
+OutputPlan:Tran1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+simulator lang = spectre

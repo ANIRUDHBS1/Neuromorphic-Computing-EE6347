@@ -1,0 +1,30 @@
+
+hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
+    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+
+
+***** Simulation started at Tue Dec  3 22:50:22 2024
+      Running on host: "ANIRUDHBS"
+      In Directory: "C:\Users\bsani\OneDrive\Desktop\Semester7\EE6347\SoorajSims\Assignment4\data"
+      Process ID: 23040
+
+Processing VAMS source 'C:/Users/bsani/OneDrive/Desktop/Semester7/EE6347/SoorajSims/Assignment4/Week4_RRAM_lib/%R%R%A%M/veriloga/veriloga.va'
+ compiled source cache is valid
+Analog module platform compile:
+    [2] amswork.RRAM (valid object cache, no platform compile required)
+    Analog module design library exists, no link required.
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with only one device attached (topology corrected): 2
+
+    Matrix is singular (detected at node or branch `X1.Gap').
+    Matrix is singular (detected at node or branch `X1.Gap').
+The final gnode step did NOT converge in 1 iteration(s) with gnode=0.000000e+00
+The solution with gnode=1.000000e-12 will be accepted
+
+
+TRAN Tran1[1] <Week4_RRAM_lib:RRAM:schematic>   time=(0 s->450 us)
+
+
+Resource usage:
+  Total stopwatch time     =    29.84 seconds.
+

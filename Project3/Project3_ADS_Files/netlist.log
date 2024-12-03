@@ -1,0 +1,40 @@
+; Top Design: "RRAM_lib:RRAM:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="RRAM_lib:RRAM:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+simulator lang = spectre
+global 0
+ahdl_include "C:/Users/bsani/OneDrive/Desktop/Semester7/EE6347/SoorajSims/Assignment3/RRAM_lib/%%R%%R%%A%%M/veriloga/veriloga.va"
+
+
+X1 (N__5 0 0 0) RRAM k=1.38e-23 q=1.602e-19 g0=1.045e-9 V0=0.243 I0=3.25e-05 ve0=10e6 Eam=1.29 a=0.8e-10 gamma0=30 b=10 c=1 L=10e-9 gmax=3.3e-9 gmin=0.2e-9 gini=3.3e-9 r_cf=4e-9 rho=1e-3 Rth=3e6 Tamb=300 CC=0.0005
+simulator lang = ads
+V_Source:SRC1  Vinp 0 Type="VtPWL" V_Tran=pwl(time, 0s,0V, 10ms,1.5V, 20ms,0V, 30ms,-1.5V, 40ms,0V) SaveCurrent=1 
+Short:I_Probe2  Vinp N__5 Mode=0 SaveCurrent=yes 
+Tran:Tran1 StartTime=0.0 nsec StopTime=40.0 msec MaxTimeStep=1.0 usec LimitStepForTL=yes TimeStepControl=2 TruncTol=7.0 ChargeTol=1.0e-14 IntegMethod=0 MaxGearOrder=2 \
+Mu=0.5 MaxOrder=4 Freq[1]=1.0 GHz Order[1]=3 HB_Window=no \
+HB_Sol=no ImpApprox=no ShortTL_Delay=1.0 psec ImpMode=1 UseInitCond=no \
+LoadGminDC=no CheckKCL=yes CheckOnlyDeltaV=yes OverloadAlert=no DeviceBypass=no \
+MaxIters=10 MaxItersDC=200 DevOpPtLevel=0 StatusLevel=2 OutputAllPoints=yes \
+NoiseScale=1 ImpEnforcePassivity=yes ImpSkipTotalEnergy=1000 ImpLFEOn=yes \
+OutputPlan="Tran1_Output" 
+
+OutputPlan:Tran1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+simulator lang = spectre
