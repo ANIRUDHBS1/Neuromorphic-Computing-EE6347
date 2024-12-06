@@ -1,0 +1,55 @@
+
+hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
+    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+
+
+***** Simulation started at Fri Dec  6 21:30:39 2024
+      Running on host: "ANIRUDHBS"
+      In Directory: "C:\Users\bsani\Downloads\FeFET\FeFET\data"
+      Process ID: 9524
+
+Processing VAMS source 'C:/Users/bsani/Downloads/FeFET/FeFET/FeFET_lib/%Fe%F%E%T/veriloga/veriloga.va'
+ >vamscomp -amswork c:\users\bsani\downloads\fefet\fefet\.netlist.ams_work -S C:/Users/bsani/Downloads/FeFET/FeFET/FeFET_lib/%Fe%F%E%T/veriloga/veriloga.va
+Warning: Variable 'E' in module 'FeFET' is never set.
+Warning: Variable 'Ea' in module 'FeFET' is never set.
+Warning: Variable 'f_Ea' in module 'FeFET' is never set.
+Warning: Variable 'f_distr' in module 'FeFET' is never set.
+Warning: Variable 'flag' in module 'FeFET' is never set.
+Warning: Variable 'ibd' in module 'FeFET' is never set.
+Warning: Variable 'ibs' in module 'FeFET' is never set.
+Warning: Variable 'j' in module 'FeFET' is never set.
+Warning: Variable 'k' in module 'FeFET' is never set.
+Warning: Variable 'l' in module 'FeFET' is never set.
+Warning: Variable 'm' in module 'FeFET' is never set.
+Warning: Variable 'qbd' in module 'FeFET' is never set.
+Warning: Variable 'qbs' in module 'FeFET' is never set.
+Warning: Variable 'qgb' in module 'FeFET' is never set.
+Warning: Variable 'qgd' in module 'FeFET' is never set.
+Warning: Variable 'qgs' in module 'FeFET' is never set.
+Warning: Variable 'vth' in module 'FeFET' is never set.
+Analog module platform compile:
+    [2] amswork.FeFET
+=============================================================================
+C:\Program Files\Keysight\ADS2025/tiburonda/tools/mingw64\bin\gcc
+Full path: C:\Program Files\Keysight\ADS2025/tiburonda/tools/mingw64\bin\gcc.exe
+ >C:\Program Files\Keysight\ADS2025/tiburonda/tools/mingw64\bin\gcc -O3 -m64 -c -I C:\Program Files\Keysight\ADS2025\tiburonda/include -x c C:\Users\bsani\hpeesof\tiburonda-vams-model-cache\2.91.101\lib.win64\ANIRUDHBS.9524.77440892\8353680a15f37db0518aba51838d604a_6cf30b761d585205b88c2912b84092af.c -o C:\Users\bsani\hpeesof\tiburonda-vams-model-cache\2.91.101\lib.win64\ANIRUDHBS.9524.77440892\8353680a15f37db0518aba51838d604a_6cf30b761d585205b88c2912b84092af.o
+Modifying environment:
+    added: PATH=;C:\Program Files\Keysight\ADS2025\tiburonda/tools/mingw64/bin
+=============================================================================
+    Linking the analog module design library
+=============================================================================
+C:\Program Files\Keysight\ADS2025/tiburonda/tools/mingw64\bin\g++
+Full path: C:\Program Files\Keysight\ADS2025/tiburonda/tools/mingw64\bin\g++.exe
+ >C:\Program Files\Keysight\ADS2025/tiburonda/tools/mingw64\bin\g++ -m64 -shared -static -o c:/users/bsani/downloads/fefet/fefet/.netlist.ams_work/2.91.101/analog_files/lib.win64/lib_a3d5bbd2ab0a40da536b7ca16a88dca9.dll C:\Users\bsani\hpeesof\tiburonda-vams-model-cache\2.91.101\lib.win64\8353680a15f37db0518aba51838d604a_6cf30b761d585205b88c2912b84092af.o C:\Program Files\Keysight\ADS2025\tiburonda/lib.mingw64/libtda_dsl.a C:\Program Files\Keysight\ADS2025\tiburonda/lib.mingw64/libtda_utils.a C:\Program Files\Keysight\ADS2025\tiburonda/lib.mingw64/libboost_filesystem-mgw12-mt-s-x64-1_76.a C:\Program Files\Keysight\ADS2025\tiburonda/lib.mingw64/libboost_system-mgw12-mt-s-x64-1_76.a
+Modifying environment:
+    added: PATH=;C:\Program Files\Keysight\ADS2025\tiburonda/tools/mingw64/bin
+=============================================================================
+
+
+
+TRAN Tran1[1] <FeFET_lib:FeFET_Q1:schematic>   time=(0 s->1 us)
+
+
+Resource usage:
+  Total stopwatch time     =    36.35 seconds.
+

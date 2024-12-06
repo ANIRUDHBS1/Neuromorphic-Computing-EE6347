@@ -1,0 +1,50 @@
+; Top Design: "FeFET_lib:FeFET_Q4:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="FeFET_lib:FeFET_Q4:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+simulator lang = spectre
+global 0
+ahdl_include "C:/Users/bsani/Downloads/FeFET/FeFET/FeFET_lib/%%Fe%%F%%E%%T/veriloga/veriloga.va"
+
+
+simulator lang = ads
+simulator lang = spectre
+X1 (N__7 vg1 vs1 vs1) FeFET width=1e-6 length=1e-6 tfe=1e-6 til=0.2e-6 ndom=1000
+X2 (N__8 vg1 vs2 vs2) FeFET width=1e-6 length=1e-6 tfe=1e-6 til=0.2e-6 ndom=1000
+X3 (N__7 vg2 vs1 vs1) FeFET width=1e-6 length=1e-6 tfe=1e-6 til=0.2e-6 ndom=1000
+X4 (N__8 vg2 vs2 vs2) FeFET width=1e-6 length=1e-6 tfe=1e-6 til=0.2e-6 ndom=1000
+simulator lang = ads
+V_Source:Vg2  vg2 0 Type="VtPWL" V_Tran=pwl(time, 0ns,0V, 1ns,-4V, 200ns,-4V, 201ns,0V, 300ns,0V, 301ns,4V, 800ns,4V, 801ns,-0.5V, 1000ns,1.5V, 1001ns,0V, 1100ns,0V) SaveCurrent=1 
+V_Source:Vg1  vg1 0 Type="VtPWL" V_Tran=pwl(time, 0ns,0V, 1ns,-4V, 200ns,-4V, 201ns,0V, 300ns,0V, 301ns,1.3V, 800ns,1.3V, 801ns,-0.5V, 1000ns,1.5V, 1001ns,0V, 1100ns,0V) SaveCurrent=1 
+V_Source:Vs2  vs2 0 Type="VtPWL" V_Tran=pwl(time, 0ns,0.0V, 1100ns,0.0V) SaveCurrent=1 
+V_Source:Vs1  vs1 0 Type="VtPWL" V_Tran=pwl(time, 0ns,0V, 300ns,0V, 301ns,2.6V, 800ns,2.6V, 801ns,0V, 1100ns,0V) SaveCurrent=1 
+Short:Id1  vd1 N__7 Mode=0 SaveCurrent=yes 
+Short:Id2  vd2 N__8 Mode=0 SaveCurrent=yes 
+V_Source:Vd1  vd1 0 Type="VtPWL" V_Tran=pwl(time, 0ns,0.1V, 300ns,0.1V, 301ns,2.6V, 800ns,2.6V, 801ns,0.1V, 1100ns,0.1V) SaveCurrent=1 
+V_Source:Vd2  vd2 0 Type="VtPWL" V_Tran=pwl(time, 0ns,0.1V, 1100ns,0.1V) SaveCurrent=1 
+Tran:Tran1 StartTime=0.0 nsec StopTime=1100.0 nsec MaxTimeStep=1.0 nsec LimitStepForTL=yes TimeStepControl=2 TruncTol=7.0 ChargeTol=1.0e-14 IntegMethod=0 MaxGearOrder=2 \
+Mu=0.5 MaxOrder=4 Freq[1]=1.0 GHz Order[1]=3 HB_Window=no \
+HB_Sol=no ImpApprox=no ShortTL_Delay=1.0 psec ImpMode=1 UseInitCond=no \
+LoadGminDC=no CheckKCL=yes CheckOnlyDeltaV=yes OverloadAlert=no DeviceBypass=no \
+MaxIters=10 MaxItersDC=200 DevOpPtLevel=0 StatusLevel=2 OutputAllPoints=yes \
+NoiseScale=1 ImpEnforcePassivity=yes ImpSkipTotalEnergy=1000 ImpLFEOn=yes \
+OutputPlan="Tran1_Output" 
+
+OutputPlan:Tran1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+

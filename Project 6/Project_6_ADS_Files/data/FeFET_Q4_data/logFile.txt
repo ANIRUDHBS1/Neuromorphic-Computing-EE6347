@@ -1,0 +1,23 @@
+
+hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
+    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+
+
+***** Simulation started at Fri Dec  6 21:43:54 2024
+      Running on host: "ANIRUDHBS"
+      In Directory: "C:\Users\bsani\Downloads\FeFET\FeFET\data"
+      Process ID: 22868
+
+Processing VAMS source 'C:/Users/bsani/Downloads/FeFET/FeFET/FeFET_lib/%Fe%F%E%T/veriloga/veriloga.va'
+ compiled source cache is valid
+Analog module platform compile:
+    [2] amswork.FeFET (valid object cache, no platform compile required)
+    Analog module design library exists, no link required.
+
+
+TRAN Tran1[1] <FeFET_lib:FeFET_Q4:schematic>   time=(0 s->1.1 us)
+
+
+Resource usage:
+  Total stopwatch time     =   798.45 seconds.
+
